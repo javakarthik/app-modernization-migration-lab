@@ -12,7 +12,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<version.wildfly.swarm>7.1.0.redhat-77</version.wildfly.swarm>
-		<version.wildfly.swarm.community>2018.4.1</version.wildfly.swarm.community>
+		<version.wildfly.swarm.community>2018.5.0</version.wildfly.swarm.community>
 		<version.postgresql>9.4.1207</version.postgresql>
 		<version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
 	</properties>
@@ -21,11 +21,15 @@
 			<id>redhat-ga</id>
 			<url>https://maven.repository.redhat.com/ga/</url>
 		</repository>
+		<repository>
+			<id>maven</id>
+			<url>https://repo1.maven.org/maven2</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>redhat</id>
-			<url>https://maven.repository.redhat.com/ga/</url>
+			<url>https://repo1.maven.org/maven2</url>
 		</pluginRepository>
 	</pluginRepositories>
 
@@ -34,7 +38,7 @@
 			<dependency>
 				<groupId>org.wildfly.swarm</groupId>
 				<artifactId>bom</artifactId>
-				<version>${version.wildfly.swarm}</version>
+				<version>${version.wildfly.swarm.community}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -79,6 +83,7 @@
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
 			<artifactId>monitor</artifactId>
+			<version>${version.wildfly.swarm.community}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
@@ -92,7 +97,7 @@
 			<plugin>
 				<groupId>org.wildfly.swarm</groupId>
 				<artifactId>wildfly-swarm-plugin</artifactId>
-				<version>${version.wildfly.swarm}</version>
+				<version>${version.wildfly.swarm.community}</version>
 				<executions>
 					<execution>
 						<goals>
